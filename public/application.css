@@ -1,0 +1,51 @@
+body {
+  background-color: #181818;
+  color: #fff;
+}
+
+
+a:hover, a:visited, a:active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  font: normal normal bold 1em/1.5em Arial, sans-serif;
+  color: #fff;
+}
+
+#box {
+  background: #A6A6A6;
+  padding: 10px;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto 0 auto;
+  text-align:center
+}
+
+#copiable {
+  font: normal normal normal 1.1em monospace;
+  margin: 10px auto 0 auto;
+  padding: 3px 0 0 3px;
+  width: 500px;
+  height: 270px;
+  background: #fff;
+}
+
+#slider {
+  margin: 20px auto 0 auto;
+  width: 300px;
+}
+
+#slider_value {
+  text-align: center;
+  font: normal normal normal 1.1em monospace;
+}
+
+#footer {
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  margin: 40px;
+  text-align: center;
+  font-size: 0.8em;
+}

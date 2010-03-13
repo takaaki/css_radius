@@ -1,0 +1,18 @@
+# osx
+.DS_Store
+*.tmproj
+
+# rails
+log/*.log
+tmp/**/*
+config/database.yml
+doc/api
+doc/app
+db/*.sqlite3
+db/schema.rb
+coverage/*
+
+# iphone
+build/*
+*.pbxuser
+*.mode1v3
