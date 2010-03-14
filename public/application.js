@@ -44,6 +44,7 @@ $(document).ready(function() {
       "bottomright" : "border-bottom-right-radius"
     }
   };
+
   
   $('#copiable').click(function() {
     $(this).focus().select();
@@ -178,4 +179,4 @@ $(document).ready(function() {
       $(this).next().text(ui.value);
     }
   });
-  });
+});
