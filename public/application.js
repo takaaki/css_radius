@@ -16,11 +16,11 @@ Array.prototype.unique = function () {
 };
 
 $(document).ready(function() {
-  var topleft_value, topright_value, bottomleft_value, bottomright_value;
+  var tl_value, tr_value, bl_value, br_value;
   var all_radius_values = [];
   var unique_radius_values = [];
   var short_code = "";
-  var topleft_code = "", topright_code = "", bottomleft_code = "", bottomright_code = "";
+  var tl_code = "", tr_code = "", bl_code = "", br_code = "";
   var props = {
     "webkit": {
       "short" : "-webkit-border-radius", // "short" is a reserved word
@@ -52,10 +52,10 @@ $(document).ready(function() {
   
   var get_code = function() {
     short_code = "";
-    topleft_code = "";
-    topright_code = "";
-    bottomleft_code = "";
-    bottomright_code = "";
+    tl_code = "";
+    tr_code = "";
+    bl_code = "";
+    br_code = "";
     
     if (unique_radius_values.length === 1) { // e.g., [2, 2, 2, 2]
       for (vendor in props) {
@@ -87,27 +87,27 @@ $(document).ready(function() {
       if (max_value === 3) { // e.g., [7, 7, 3, 7]
         for (vendor in props) {
          short_code += props[vendor]["short"] + ": " + max_index + "px;\n";
-         if (topleft_value != max_index) { 
-           topleft_code += props[vendor].topleft + ": " + topleft_value + "px;\n"; 
+         if (tl_value != max_index) { 
+           tl_code += props[vendor].topleft + ": " + tl_value + "px;\n"; 
          }
-         if (topright_value != max_index) { 
-           topright_code += props[vendor].topright + ": " + topright_value + "px;\n"; 
+         if (tr_value != max_index) { 
+           tr_code += props[vendor].topright + ": " + tr_value + "px;\n"; 
          }
-         if (bottomleft_value != max_index) { 
-           bottomleft_code += props[vendor].bottomleft + ": " + bottomleft_value + "px;\n";
+         if (bl_value != max_index) { 
+           bl_code += props[vendor].bottomleft + ": " + bl_value + "px;\n";
          }
-         if (bottomright_value != max_index) { 
-           bottomright_code += props[vendor].bottomright + ": " + bottomright_value + "px;\n";
+         if (br_value != max_index) { 
+           br_code += props[vendor].bottomright + ": " + br_value + "px;\n";
          }
         }
       } else if (max_value === 2) { // e.g., [4, 4, 2, 2]
        var min_value = Math.min.apply(Math, all_radius_values);
        for (vendor in props) {
          short_code += props[vendor]["short"] + ": " + min_value + "px;\n";
-         if (topleft_value != min_value) { topleft_code += props[vendor].topleft + ": " + topleft_value + "px;\n"; }
-         if (topright_value != min_value) { topright_code += props[vendor].topright + ": " + topright_value + "px;\n"; }
-         if (bottomleft_value != min_value) { bottomleft_code += props[vendor].bottomleft + ": " + bottomleft_value + "px;\n"; }
-         if (bottomright_value != min_value) { bottomright_code += props[vendor].bottomright + ": " + bottomright_value + "px;\n"; }
+         if (tl_value != min_value) { tl_code += props[vendor].topleft + ": " + tl_value + "px;\n"; }
+         if (tr_value != min_value) { tr_code += props[vendor].topright + ": " + tr_value + "px;\n"; }
+         if (bl_value != min_value) { bl_code += props[vendor].bottomleft + ": " + bl_value + "px;\n"; }
+         if (br_value != min_value) { br_code += props[vendor].bottomright + ": " + br_value + "px;\n"; }
        }
      }
      
@@ -141,30 +141,30 @@ $(document).ready(function() {
       var min_value = Math.min.apply(Math, all_radius_values);
       for (vendor in props) {
         short_code += props[vendor]["short"] + ": " + min_value + "px;\n";
-        if (topleft_value != min_value) { topleft_code += props[vendor].topleft + ": " + topleft_value + "px;\n"; }
-        if (topright_value != min_value) { topright_code += props[vendor].topright + ": " + topright_value + "px;\n"; }
-        if (bottomleft_value != min_value) { bottomleft_code += props[vendor].bottomleft + ": " + bottomleft_value + "px;\n"; }
-        if (bottomright_value != min_value) { bottomright_code += props[vendor].bottomright + ": " + bottomright_value + "px;\n"; }
+        if (tl_value != min_value) { tl_code += props[vendor].topleft + ": " + tl_value + "px;\n"; }
+        if (tr_value != min_value) { tr_code += props[vendor].topright + ": " + tr_value + "px;\n"; }
+        if (bl_value != min_value) { bl_code += props[vendor].bottomleft + ": " + bl_value + "px;\n"; }
+        if (br_value != min_value) { br_code += props[vendor].bottomright + ": " + br_value + "px;\n"; }
       }
     } else { // unique_radius_values.length === 4
       // Each value is different. e.g., [7, 1, 8, 4]
       for (vendor in props) {
-        topleft_code += props[vendor].topleft + ": " + topleft_value + "px;\n";
-        topright_code += props[vendor].topright + ": " + topright_value + "px;\n";
-        bottomleft_code += props[vendor].bottomleft + ": " + bottomleft_value + "px;\n";
-        bottomright_code += props[vendor].bottomright + ": " + bottomright_value + "px;\n";
+        tl_code += props[vendor].topleft + ": " + tl_value + "px;\n";
+        tr_code += props[vendor].topright + ": " + tr_value + "px;\n";
+        bl_code += props[vendor].bottomleft + ": " + bl_value + "px;\n";
+        br_code += props[vendor].bottomright + ": " + br_value + "px;\n";
       }
     }
-    var complete_code = short_code + topleft_code + topright_code + bottomleft_code + bottomright_code;
+    var complete_code = short_code + tl_code + tr_code + bl_code + br_code;
     return complete_code.replace(/\s0px/g, " 0");
   };
 
 
   var get_values_from_sliders = function() {
-    topleft_value     = $('#slider_topleft').slider('option', 'value');
-    topright_value    = $('#slider_topright').slider('option', 'value');
-    bottomleft_value  = $('#slider_bottomleft').slider('option', 'value');
-    bottomright_value = $('#slider_bottomright').slider('option', 'value');
+    tl_value     = $('#slider_topleft').slider('option', 'value');
+    tr_value    = $('#slider_topright').slider('option', 'value');
+    bl_value  = $('#slider_bottomleft').slider('option', 'value');
+    br_value = $('#slider_bottomright').slider('option', 'value');
 
   };
   
@@ -172,7 +172,7 @@ $(document).ready(function() {
     animate: true,
     change: function(event, ui) {
       get_values_from_sliders();
-      all_radius_values = [topleft_value, topright_value, bottomleft_value, bottomright_value];
+      all_radius_values = [tl_value, tr_value, bl_value, br_value];
       unique_radius_values = all_radius_values.unique();
       var code = get_code();
       $('#box').attr("style", code);
