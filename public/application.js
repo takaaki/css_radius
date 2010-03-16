@@ -18,9 +18,8 @@ Array.prototype.unique = function () {
 $(document).ready(function() {
   var tl_value, tr_value, bl_value, br_value;
   var all_radius_values = [];
-  var unique_radius_values = [];
-  var short_code = "";
-  var tl_code = "", tr_code = "", bl_code = "", br_code = "";
+  
+
   var props = {
     "webkit": {
       "short" : "-webkit-border-radius", // "short" is a reserved word
@@ -53,11 +52,9 @@ $(document).ready(function() {
   $(".px").text("0");
   
   var get_code = function(vendor) {
-    short_code = "";
-    tl_code = "";
-    tr_code = "";
-    bl_code = "";
-    br_code = "";
+    var short_code = "";
+    var tl_code = "", tr_code = "", bl_code = "", br_code = "";
+    var unique_radius_values = all_radius_values.unique();
     
     var frequencies = {};
     var max_index; // Most frequest value
@@ -162,13 +159,15 @@ $(document).ready(function() {
     tr_value = $('#slider_topright').slider('option', 'value');
     bl_value = $('#slider_bottomleft').slider('option', 'value');
     br_value = $('#slider_bottomright').slider('option', 'value');
-  };
+    return [tl_value, tr_value, bl_value, br_value];
+  };        
   var update = function(){
-    get_values_from_sliders();
-    all_radius_values = [tl_value, tr_value, bl_value, br_value];
+    all_radius_values = get_values_from_sliders();
     unique_radius_values = all_radius_values.unique();
+    
     var webkit, moz, css3;
     var code = "";
+    // TODO: some duplication for `code` and `code_for_style`
     if ($("#webkit").attr("checked")) { webkit = get_code("webkit"); }
     if ($("#moz").attr("checked")) { moz = get_code("moz"); }
     if ($("#css3").attr("checked")) { css3 = get_code("css3"); }
@@ -177,8 +176,13 @@ $(document).ready(function() {
     if (moz) { code += moz; }
     if (css3) { code += css3; }
     
-    $('#box').attr("style", code);
+    webkit = get_code("webkit");
+    moz = get_code("moz");
+    css3 = get_code("css3");
     
+    var code_for_style = webkit + moz + css3;
+    
+    $('#box').attr("style", code_for_style);
     $('#copiable').text(code);
   };
   
