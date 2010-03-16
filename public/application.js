@@ -18,7 +18,6 @@ Array.prototype.unique = function () {
 $(document).ready(function() {
   var tl_value, tr_value, bl_value, br_value;
   var all_radius_values = [];
-  
 
   var props = {
     "webkit": {
@@ -44,16 +43,18 @@ $(document).ready(function() {
     }
   };
   
+  // Clicking the textarea highlighs the entire texarea
   $('#copiable').click(function() {
     $(this).focus().select();
   });
-  
+  // Initialize checkbox states
   $(':checkbox').attr("checked", "true");
+  
+  // Initialize the values of the sliders
   $(".px").text("0");
   
   var get_code = function(vendor) {
-    var short_code = "";
-    var tl_code = "", tr_code = "", bl_code = "", br_code = "";
+    var short_code = "", tl_code = "", tr_code = "", bl_code = "", br_code = "";
     var unique_radius_values = all_radius_values.unique();
     
     var frequencies = {};
@@ -163,26 +164,19 @@ $(document).ready(function() {
   };        
   var update = function(){
     all_radius_values = get_values_from_sliders();
-    unique_radius_values = all_radius_values.unique();
-    
     var webkit, moz, css3;
-    var code = "";
-    // TODO: some duplication for `code` and `code_for_style`
-    if ($("#webkit").attr("checked")) { webkit = get_code("webkit"); }
-    if ($("#moz").attr("checked")) { moz = get_code("moz"); }
-    if ($("#css3").attr("checked")) { css3 = get_code("css3"); }
-    
-    if (webkit) { code += webkit; }
-    if (moz) { code += moz; }
-    if (css3) { code += css3; }
-    
     webkit = get_code("webkit");
-    moz = get_code("moz");
+    moz = get_code("moz"); 
     css3 = get_code("css3");
+    // Apply style
+    $('#box').attr("style", webkit + moz + css3);
     
-    var code_for_style = webkit + moz + css3;
+    var code = "";
+    if ($("#webkit").attr("checked")) { code += webkit; }
+    if ($("#moz").attr("checked")) { code += moz; }
+    if ($("#css3").attr("checked")) { code += css3; }
     
-    $('#box').attr("style", code_for_style);
+    // Update the textarea
     $('#copiable').text(code);
   };
   
