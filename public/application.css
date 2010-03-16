@@ -16,7 +16,7 @@ h1 {
   color: #fff;  
 }
 
-.text {
+.slider_line {
   text-align: center;
   font: normal normal bold 0.9em Arial, sans-serif;
   color: #fff;
@@ -26,10 +26,7 @@ h1 {
   width: 600px;
   text-align: center;
   margin: 0 auto;
-}
-
-.text {
-  text-align: center;
+  font-family: Arial, "MS Trebuchet", sans-serif;
 }
 
 .label {
