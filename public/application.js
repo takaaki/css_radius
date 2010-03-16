@@ -155,7 +155,8 @@ $(document).ready(function() {
         bottomright_code += props[vendor].bottomright + ": " + bottomright_value + "px;\n";
       }
     }
-    return short_code + topleft_code + topright_code + bottomleft_code + bottomright_code;
+    var complete_code = short_code + topleft_code + topright_code + bottomleft_code + bottomright_code;
+    return complete_code.replace(/\s0px/g, " 0");
   };
 
 
