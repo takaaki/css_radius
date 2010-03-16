@@ -50,6 +50,7 @@ $(document).ready(function() {
   });
   
   $(':checkbox').attr("checked", "true");
+  $(".px").text("0");
   
   var get_code = function(vendor) {
     short_code = "";
