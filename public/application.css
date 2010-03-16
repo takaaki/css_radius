@@ -1,10 +1,11 @@
 body {
   background-color: #2A2A2A;
   color: #fff;
+  height: 100%;
+  margin-bottom: 0;
 }
 
-
-a:hover, a:visited, a:active {
+a:link, a:hover, a:visited, a:active {
   color: #fff;
   text-decoration: underline;
 }
@@ -21,13 +22,21 @@ h1 {
   color: #fff;
 }
 
+#slider_box {
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+}
+
 .label {
-/*  display: inline;
+  display: block;
   float: left;    
-  width: 10em; 
-  margin-top: -3px;   
-  margin-left: 220px;
-  text-align: right;*/
+  width: 9em;
+  text-align: right;  
 }
 
 #box {
@@ -53,33 +62,17 @@ h1 {
   width: 300px;
 }
 
-#slider_topleft {
-  margin: 2px auto 5px auto;
-  width: 300px;
-}
-#slider_topright {
-  margin: 2px auto 5px auto;
-  width: 300px;
-}
-#slider_bottomleft {
-  margin: 2px auto 5px auto;
-  width: 300px;
-}
-#slider_bottomright {
-  margin: 2px auto 5px auto;
-  width: 300px;
+.px {
+  float: right;
+  display: block;
+  width: 140px;
+  text-align: left;
+  margin: -1em 0 0 0;
 }
 
-#slider_value {
-  text-align: center;
-  font: normal normal normal 1.1em monospace;
-}
-
-footer {
+#footer {
   font-family: Arial, "MS Trebuchet", sans-serif;
-  margin: 10px;
+  margin: 10px auto;
   text-align: center;
   font-size: 0.8em;
 }
-
-

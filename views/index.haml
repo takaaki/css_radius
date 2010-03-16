@@ -2,42 +2,42 @@
 %html
   %head
     %meta(charset="UTF-8")
-    %title CSS Border Radius with Sliders
+    %title CSS Border Radius with jQuery Sliders
     %link(rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8rc3.custom.css")
     %link(rel="stylesheet" href="application.css")
     %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8")
     %script(src="jquery-ui.js" type="text/javascript" charset="utf-8")
     %script(src="application.js" type="text/javascript" charset="utf-8")
   %body
-    %h1 CSS Border Radius with Sliders
+    %h1 CSS Border Radius with jQuery Sliders
     #box
       %textarea#copiable Move the slider below.
-    %br
-    .text
-      .label Top Left: 
-      .slider#slider_topleft
-      %span 0
-    .text
-      .label Top Right: 
-      .slider#slider_topright
-      %span 0
-    .text
-      .label Bottom Left: 
-      .slider#slider_bottomleft
-      %span 0
-    .text
-      .label Bottom Right: 
-      .slider#slider_bottomright
-      %span 0
-    
-    %footer
+    %br/
+    #slider_box
+      .text
+        %span.label Top Left: 
+        .slider#slider_topleft
+        %span.px 0
+      .text
+        %span.label Top Right: 
+        .slider#slider_topright
+        %span.px 0
+      .text
+        %span.label Bottom Left: 
+        .slider#slider_bottomleft
+        %span.px 0
+      .text
+        %span.label Bottom Right: 
+        .slider#slider_bottomright
+        %span.px 0
+    %br/
+    #footer
       :markdown
         The idea is stolen from [CSS Border Radius][cssradius]. This website is made by [Takaaki Kato](http://takaaki.me "Takaaki Kato"). [On GitHub](https://github.com/takaaki/css_radius "css_radius").  
         Need [a better control][cssradius] or need [an explanation](http://www.the-art-of-web.com/css/border-radius/ "CSS: border-radius and -moz-border-radius")?
         [cssradius]: http://border-radius.com/ "CSS Border Radius"
         BUG: Unnecessary 0's show up in certain situations.  
         TODO: Show the code in order by vendor (i.e., webkit, mozilla, css3).  
-        TODO: Move the label on the left of each slider.  
         TODO: Add a way to show/hide certain vendors with checkboxs ala the original site.
     
     <a href="http://github.com/takaaki/css_radius"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
