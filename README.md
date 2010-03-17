@@ -2,6 +2,11 @@
 
 One page app to find out CSS 3 Corner Radius code. Visit <http://css-radius.heroku.com/>.
 
+## Installation
+
+  gem install sinatra haml
+  ruby ./app.rb
+  
 
 ## Author
 
