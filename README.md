@@ -1,12 +1,11 @@
 # CSS Corner Radius with jQuery Slider
 
-One page app to find out CSS 3 Corner Radius code. Visit <http://css-radius.heroku.com/>.
+One page sinatra app to find out CSS 3 Corner Radius code. Visit <http://css-radius.heroku.com/>.
 
 ## Installation
 
-  gem install sinatra haml
-  ruby ./app.rb
-  
+    gem install sinatra haml
+    ruby ./app.rb
 
 ## Author
 
