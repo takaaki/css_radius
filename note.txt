@@ -1,0 +1,22 @@
+# Patterns to consider:
+
+[top-left, top-right, bottom-left, bottom-right]
+
+## Basic combination
+
+[1, 2, 3, 4] # Each value is different.
+[2, 2, 8, 2] # Three values are the same.
+[3, 3, 3, 3] # All the values are the same.
+[4, 4, 2, 2] # Two values x 2
+[8, 8, 1, 5] # Two values are the same. Each of the rest is different.
+
+
+## Zero treatmet
+
+[0, 1, 2, 3] # 0 value should not be displayed.
+[0, 2, 2, 3] # 0 value should not be displayed.
+[0, 3, 3, 3] # No special care is needed.
+[0, 0, 1, 2] # No special care is needed.
+[0, 0, 2, 2] # Choose a bigger number and use the values. 0's should not be displayed.
+[0, 0, 0, 3] # Use 0 for short notation and use 3 for a specific notation
+[0, 0, 0, 0] # Nothing should be shown.
