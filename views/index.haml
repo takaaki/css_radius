@@ -12,7 +12,7 @@
     %script(src="application.js" type="text/javascript" charset="utf-8")
     %meta(name="description" content="CSS3 border radius generator")
     %meta(name="keywords" content="css, rounded corners, border radius")
-    %meta(name="robots" content="index, follow")
+    %meta(name="robots" content="index, follow")/
     <meta name="google-site-verification" content="A4RnviWOJcb07Nn2D89iWn8rfIOjMrOSJ3NXzCe-Rso" />
   %body
     %h1 CSS Border Radius with jQuery Sliders
@@ -22,34 +22,41 @@
     
     #slider_box
       #label_box
-        %label
-          %input#webkit(type="checkbox") Webkit
-        %label
-          %input#moz(type="checkbox") Gecko
-        %label
-          %input#css3(type="checkbox") CSS3
+        %label(for="webkit")
+          %input#webkit(type="checkbox")
+          Webkit
+          
+        %label(for="moz")
+          %input#moz(type="checkbox")
+          Gecko
+          
+        %label(for="css3")
+          %input#css3(type="checkbox")
+          CSS3
+           
+        
           
       .slider_line
-        %span.label Top Left: 
+        %span.label Top Left:
         .slider#slider_topleft
         %span.px
       .slider_line
-        %span.label Top Right: 
+        %span.label Top Right:
         .slider#slider_topright
         %span.px
       .slider_line
-        %span.label Bottom Left: 
+        %span.label Bottom Left:
         .slider#slider_bottomleft
         %span.px
       .slider_line
-        %span.label Bottom Right: 
+        %span.label Bottom Right:
         .slider#slider_bottomright
         %span.px
     %br/
     #footer
       :markdown
-        The idea is stolen from [CSS Border Radius][cssradius] and [Dan Benjamin](http://hivelogic.com/articles/css-border-radius-builder "Hivelogic").  
-        This website is made by [Takaaki Kato](http://takaaki.me "Takaaki Kato"). [On GitHub](https://github.com/takaaki/css_radius "css_radius").  
+        The idea is stolen from [CSS Border Radius][cssradius] and [Dan Benjamin](http://hivelogic.com/articles/css-border-radius-builder "Hivelogic").
+        This website is made by [Takaaki Kato](http://takaaki.me "Takaaki Kato"). [On GitHub](https://github.com/takaaki/css_radius "css_radius").
         Need [an explanation](http://www.the-art-of-web.com/css/border-radius/ "CSS: border-radius and -moz-border-radius")? If you know a better color scheme, <a href="mailto:takaaki.kato@gmail.com">please let me know</a>.
         [cssradius]: http://border-radius.com/ "CSS Border Radius"
     
