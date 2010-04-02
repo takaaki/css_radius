@@ -4,7 +4,9 @@ One page sinatra app to find out CSS 3 Corner Radius code. Visit <http://css-rad
 
 ## Installation
 
-    gem install sinatra haml
+Get a [Bundler](http://gembundler.com/index.html "Bundler") if you don't have yet.
+
+    bundle install
     ruby ./app.rb
 
 ## Author

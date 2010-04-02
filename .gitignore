@@ -16,3 +16,5 @@ coverage/*
 build/*
 *.pbxuser
 *.mode1v3
+
+.bundle
